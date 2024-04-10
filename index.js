@@ -5,12 +5,6 @@ const app = express();
 const cors = require("cors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
-const path = require('path');
-const {fileURLToPath} = require('url');
-
-//custom dir_name
-const filename = __filename
-const dirname = path.dirname(filename);
 
 app.use(
   cors({
@@ -21,11 +15,6 @@ dotenv.config();
 
 app.use(express.json());
 
-//use client in server
-app.use(express.static(path.join(dirname, '/live-chat-client/build')))
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/live-chat-client/build/index.html'))
-})
 
 const userRoutes = require("./Routes/userRoutes");
 const chatRoutes = require("./Routes/chatRoutes");
