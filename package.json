@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "npm install --prefix ./live-chat-client && npm run build --prefix ./live-chat-client && npm install"
+    "start": "node index.js"
   },
   "author": "PrepBytes",
   "license": "ISC",
